@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
 	
@@ -7,6 +9,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<title>onlinedaw</title>
 </svelte:head>
 
 {@render children?.()}
