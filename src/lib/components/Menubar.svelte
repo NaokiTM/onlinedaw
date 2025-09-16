@@ -13,3 +13,10 @@
     <button>Tools</button>
     <button>Help</button>
 </nav>
+
+<style>
+    button:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+</style>
