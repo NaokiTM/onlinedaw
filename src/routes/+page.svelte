@@ -6,4 +6,7 @@
 <Menubar></Menubar>
 
 <style>
+    :global(body) {
+        background-color: black;
+    }
 </style>
