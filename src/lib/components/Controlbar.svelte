@@ -88,7 +88,7 @@
     } */
 
     .record-btn {
-        all: unset;
+        /* all: unset; */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -125,7 +125,7 @@
     }
 
     .cassette-btn {
-        all: unset;
+        /* all: unset; */
         display: flex;
         flex-direction: column;
         align-items: center;
