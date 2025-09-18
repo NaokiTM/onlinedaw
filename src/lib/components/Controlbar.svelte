@@ -8,6 +8,8 @@
     import skip from '$lib/assets/skip.png'
     import pause from'$lib/assets/pause.png'
     import record from'$lib/assets/record.png'
+    import piano from '$lib/assets/piano.png'
+    import loop from '$lib/assets/loop.png'
 </script>
 
 <nav class="bg-neutral-700 text-white space-x-2 flex items-center text-sm p-2">
@@ -40,6 +42,9 @@
                 <span class="cassette-slot"></span>
             </button>
         </div> 
+        <div class="flex-1">
+
+        </div>
      </div>
 
 
@@ -69,7 +74,10 @@
         </div>
      </div>
 
-        <div class="flex-1">
+        <div class="flex-1 flex justify-center">
+            <button>
+                <img src={metronome} alt='metronome' class="block w-6 h-6">
+            </button>
         </div>
 
 </nav>
