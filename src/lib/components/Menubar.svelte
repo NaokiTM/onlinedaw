@@ -6,7 +6,7 @@
     <!-- ADD ATTRIBUTION LATER / SWITCH OUT LOGO -->
     <!-- <a href="https://www.flaticon.com/free-icons/music-note" title="music note icons">Music note icons created by Freepik - Flaticon</a>  -->
 
-<nav class="bg-neutral-800 text-white space-x-2 flex items-center text-sm ">
+<nav class="bg-neutral-800 text-white space-x-2 flex items-center text-sm z-10">
 
     <!-- ADD ATTRIBUTION LATER / SWITCH OUT LOGO -->
     <!-- <a href="https://www.flaticon.com/free-icons/music-note" title="music note icons">Music note icons created by Freepik - Flaticon</a>  -->
