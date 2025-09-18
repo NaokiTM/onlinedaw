@@ -19,7 +19,10 @@
 
         <ul class="dropdown-content menu p-2 shadow bg-neutral-700 w-52 absolute hidden group-hover:block rounded-sm">
             <li><button class="btn text-slate-300 rounded-sm">New project</button></li>
-            <li><button class="btn text-slate-300 rounded-sm">Save</button></li>
+            <li><button class="btn text-slate-300 rounded-sm">Open project</button></li>
+            <li><button class="btn text-slate-300 rounded-sm">Save project</button></li>
+            <li><button class="btn text-slate-300 rounded-sm">Share</button></li>
+            <li><button class="btn text-slate-300 rounded-sm">Close project</button></li>
         </ul>
     </div>
 
@@ -29,13 +32,15 @@
         <ul class="dropdown-content menu p-2 shadow bg-neutral-700 w-52 absolute hidden group-hover:block rounded-sm">
             <li><button class="btn text-slate-300 rounded-sm">Undo</button></li>
             <li><button class="btn text-slate-300 rounded-sm">Redo</button></li>
+            <li><button class="btn text-slate-300 rounded-sm">Copy</button></li>
+            <li><button class="btn text-slate-300 rounded-sm">Paste</button></li>
+
         </ul>
     </div>
     <div class="relative inline-block group">
         <button class="rounded-sm">Add</button>
 
         <ul class="dropdown-content menu p-2 shadow bg-neutral-700 w-52 absolute hidden group-hover:block rounded-sm">
-            <li><button class="btn text-slate-300 rounded-sm">Add track</button></li>
             <li><button class="btn text-slate-300 rounded-sm">Add instrument</button></li>
         </ul>
     </div>
@@ -43,8 +48,8 @@
         <button class="rounded-sm">View</button>
 
         <ul class="dropdown-content menu p-2 shadow bg-neutral-700 w-52 absolute hidden group-hover:block rounded-sm">
-            <li><button class="btn text-slate-300 rounded-sm">remove Navbar</button></li>
-            <li><button class="btn text-slate-300 rounded-sm">etc</button></li>
+            <li><button class="btn text-slate-300 rounded-sm">appearance</button></li>
+            <li><button class="btn text-slate-300 rounded-sm">idk</button></li>
         </ul>
     </div>
     <div class="relative inline-block group">
