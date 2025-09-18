@@ -8,13 +8,17 @@
     import skip from '$lib/assets/skip.png'
     import pause from'$lib/assets/pause.png'
     import record from'$lib/assets/record.png'
+    import piano from '$lib/assets/piano.png'
+    import loop from '$lib/assets/loop.png'
 </script>
 
 <nav class="bg-neutral-700 text-white space-x-2 flex items-center text-sm p-2">
 
     <!-- track controls -->
-     <div class="flex-1 flex justify-center">
-        <div class="bg-neutral-900 p-2 space-x-2 flex w-fit" >
+     <div class="flex-1 flex">
+        <div class="flex flex-1">
+        </div>
+        <div class="bg-neutral-900 p-2 space-x-2 flex w-fit flex-shrink-0" >
             <button class="border-none p-0">
                 <img src='{record}' alt='record' class="block w-6 h-6">
             </button>
@@ -31,9 +35,12 @@
                 <img src='{skip}' alt='skip'class="block w-6 h-6">
             </button>
             <button>
-                <img src={metronome} alt='metronome' class="block w-6 h-6">
+                <img src='{loop}' alt='skip'class="block w-6 h-6">
             </button>
         </div> 
+        <div class="flex-1">
+
+        </div>
      </div>
 
 
@@ -63,7 +70,10 @@
         </div>
      </div>
 
-        <div class="flex-1">
+        <div class="flex-1 flex justify-center">
+            <button>
+                <img src={metronome} alt='metronome' class="block w-6 h-6">
+            </button>
         </div>
 
 </nav>
@@ -72,4 +82,7 @@
     /* img {
         scale: 50%;
     } */
+     button {
+        cursor: pointer;
+     }
 </style>
