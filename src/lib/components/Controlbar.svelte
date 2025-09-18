@@ -15,23 +15,29 @@
     <!-- track controls -->
      <div class="flex-1 flex justify-center">
         <div class="bg-neutral-900 p-2 space-x-2 flex w-fit" >
-            <button class="border-none p-0">
-                <img src='{record}' alt='record' class="block w-6 h-6">
+            <!-- svelte-ignore a11y_consider_explicit_label -->
+            <button class="record-btn">
+                <span class="record-slot"></span>
             </button>
-            <button>
-                <img src='{play}' alt='back' class="block w-6 h-6">
+            <button class="cassette-btn">
+                <img src='{play}' alt='back' class="block w-4 h-4 mb-1.5">
+                <span class="cassette-slot"></span>
             </button>
-            <button>
-                <img src='{pause}' alt='play' class="block w-6 h-6">
+            <button class="cassette-btn">
+                <img src='{pause}' alt='play' class="block w-4 h-4 mb-1.5">
+                <span class="cassette-slot"></span>
             </button>
-            <button>
-                <img src='{back}' alt='record' class="block w-6 h-6">
+            <button class="cassette-btn">
+                <img src='{back}' alt='record' class="block w-4 h-4 mb-1.5">
+                <span class="cassette-slot"></span>
             </button>
-            <button>
-                <img src='{skip}' alt='skip'class="block w-6 h-6">
+            <button class="cassette-btn">
+                <img src='{skip}' alt='skip'class="block w-4 h-4 mb-1.5">
+                <span class="cassette-slot"></span>
             </button>
-            <button>
-                <img src={metronome} alt='metronome' class="block w-6 h-6">
+            <button class="cassette-btn">
+                <img src={metronome} alt='metronome' class="block w-4 h-4 mb-1.5">
+                <span class="cassette-slot"></span>
             </button>
         </div> 
      </div>
@@ -72,4 +78,78 @@
     /* img {
         scale: 50%;
     } */
+
+    .record-btn {
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+
+        width: 30px;
+        height: 35px;
+        position: relative;
+
+        background: rgb(127, 26, 26);
+
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 85%,
+            90% 100%,
+            10% 100%,
+            0 85%
+        );
+
+        cursor: pointer;
+    }
+
+    .record-slot {
+        width: 80%;
+        height: 2.5px;
+        background: linear-gradient(to bottom, #c41212 0%, #721717 48%);
+        border-radius: 6px;
+        box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3);
+        margin-bottom: 2px;
+    }
+
+    .cassette-btn {
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+
+        width: 30px;
+        height: 35px;
+        position: relative;
+
+        background: rgb(60, 59, 55);
+
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 85%,
+            90% 100%,
+            10% 100%,
+            0 85%
+        );
+
+        cursor: pointer;
+    }
+
+    .cassette-slot {
+        width: 80%;
+        height: 2.5px;
+        background: linear-gradient(to bottom, #706E67 0%, #33332F 48%);
+        border-radius: 6px;
+        box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3);
+        margin-bottom: 2px;
+    }
 </style>
