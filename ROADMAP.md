@@ -1,5 +1,5 @@
 # Basic Roadmap (for now, much to be added)
-- Menu bar 
+- Menu bar (DONE)
     - new project 
     - open project 
     - save 
@@ -7,14 +7,12 @@
     - undo and redo 
     - appearance 
     - copy and paste 
-    - account management
-- Track control bar underneath menu 
-    - button to open virtual instruments
-    - button to open point and click note placing
+    - account management (NOT DONE THE BUTTON FOR THIS)
+- Track control bar underneath menu (DONE)
     - rewind, play, skip, pause, record, 
     - bar number, beat number, key, time sig, tempo
     - metronome 
-- Basic track interface (8 bars to start with)
+- Basic track interface (8 bars to start with) (NOT STARTED)
     - name, volume meter, panning, mute track 
     - ability to add infinite tracks (array of objects? or similar)
     - ability to make tracks infinite length / infinite number of bars (a "+" button to add bars)
