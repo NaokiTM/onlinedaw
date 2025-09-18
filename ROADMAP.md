@@ -1,8 +1,11 @@
 # Basic Roadmap (for now, much to be added)
+- a dashboard showing all projects (add as seperate route in routes, pointing to the main editor). This is optional, 
 - Menu bar 
     - new project 
     - open project 
     - save 
+    - share
+    - close project
     - edit 
     - undo and redo 
     - appearance 
