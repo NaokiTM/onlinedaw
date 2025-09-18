@@ -24,3 +24,10 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+
+# Attributions (add later to footer or about)
+<a target="_blank" href="https://icons8.com/icon/9978/play">Play</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<a target="_blank" href="https://icons8.com/icon/60362/filled-circle">Circle</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<a target="_blank" href="https://icons8.com/icon/z319sFhd46s4/square-90">Square</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<a target="_blank" href="https://icons8.com/icon/9990/end">Skip</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<a target="_blank" href="https://icons8.com/icon/QRViPceGXUeh/metronome">Metronome</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
