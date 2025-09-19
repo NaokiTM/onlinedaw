@@ -75,9 +75,7 @@
      </div>
 
         <div class="flex-1 flex justify-center">
-            <button>
-                <img src={metronome} alt='metronome' class="block w-6 h-6">
-            </button>
+            <!-- maybe add some other buttons here -->
         </div>
 
 </nav>

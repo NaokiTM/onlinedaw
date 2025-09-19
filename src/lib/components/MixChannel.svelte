@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     export let min = 0;
     export let max = 150;
     export let value = 100;
@@ -11,6 +11,7 @@
 
     <!-- Level Indicator and adjuster -->
     <div class="flex items-center gap-4">
+
 
         <!-- Vertical slider -->
         <input
