@@ -27,8 +27,7 @@
   });
 </script>
 
-<div class="fixed bottom-0 w-full h-[30vh] bg-[#5C5B5B] flex justify-center items-center gap-5">
-
+<div class="bottom-0 w-full h-[30vh] bg-[#5C5B5B] flex justify-center items-center gap-5">
   {#each channels as val, i (i)}
     <div class="">
       <Dial bind:value={channels[i]} />
