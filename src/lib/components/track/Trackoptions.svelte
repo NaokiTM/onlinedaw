@@ -5,11 +5,11 @@
 
     function addTrack() {
         TracksArray.update(arr => {
-            let maxId = arr.length ? Math.max(...arr.map(t => t.id)) : 0;
-            let nextId = maxId + 1;
-            return [
+            let maxId = arr.length ? Math.max(...arr.map(t => t.id)) : 0; //calculates last index of the array where length is non zero
+            let nextId = maxId + 1;            //calculate index for the next tracks id
+            return [   //Return a copy of the previous tracks array + object for the track to be added
                 ...arr, 
-                {id: nextId, instrument: "piano", muted: false}  //allow user to choose instrument before adding a track
+                {id: nextId, instrument: "piano", muted: false}  //allow user to choose instrument before adding a track (do later)
             ]
         })
     }

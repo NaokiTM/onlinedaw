@@ -1,6 +1,4 @@
 <script>
-
-    //used to print out the instrument number in Tracks.svelte. can be deleted later this is just for testing purposes
     export let track
 </script>
 

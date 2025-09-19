@@ -8,14 +8,14 @@
 
 
 <!-- map all tracks here -->
-<div class="flex flex-col text-white">                <!-- Shows bar number and looping information -->
+<div class="flex flex-col text-white">
     <div class="flex">
         <div class="flex-2">
 
             <!-- map track headers here -->
             <Trackoptions></Trackoptions>
             {#each $TracksArray as track (track.id)}
-                <Trackheader track={track}></Trackheader>
+                <Trackheader track={track}></Trackheader>   <!-- pass the track object for each track (may need to pass it to trackbody later for changing track colour on mute etc)-->
             {/each}
 
         </div>
