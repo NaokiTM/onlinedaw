@@ -21,3 +21,8 @@
     - name, volume meter, panning, mute track 
     - ability to add infinite tracks (array of objects? or similar)
     - ability to make tracks infinite length / infinite number of bars (a "+" button to add bars)
+
+# errors/issues
+- opening dev tools causes dials to barely spin (only 1-3 degrees max)
+- can still go full circle around the dial, need cut off points on left and right
+- attach event listener to window to allow dragging without needing to be directly hovering over the dial
