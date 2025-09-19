@@ -12,7 +12,7 @@
     import loop from '$lib/assets/loop.png'
 </script>
 
-<nav class="bg-neutral-700 text-white space-x-2 flex items-center text-sm p-2">
+<nav class="bg-[#AEAEAE] text-white space-x-2 flex items-center text-sm p-2">
 
     <!-- track controls -->
      <div class="flex-1 flex">
