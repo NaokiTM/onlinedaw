@@ -17,8 +17,8 @@
             <Trackbars></Trackbars>            
         </div>
     </div>
-    <div class="flex overflow-y-auto">
-        <div class="flex-2">
+    <div class="flex overflow-y-auto h-full">
+        <div class="flex-2 bg-neutral-800">
             {#each $TracksArray as track (track.id)}
                 <Trackheader track={track}></Trackheader>   <!-- pass the track object for each track containing various attributes of each(may need to pass it to trackbody later for changing track colour on mute etc)-->
             {/each}

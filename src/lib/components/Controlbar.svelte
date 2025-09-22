@@ -10,9 +10,17 @@
     import record from'$lib/assets/record.png'
     import piano from '$lib/assets/piano.png'
     import loop from '$lib/assets/loop.png'
+    import snip from '$lib/assets/snip.png'
+    import mixer from '$lib/assets/mixer.png'
 
     import { isPlaying } from '$lib/stores'
     import { caretPos } from '$lib/stores'
+
+    import { mixingDeckHidden } from "$lib/stores";
+
+    function toggleMixingDeck() {
+        mixingDeckHidden.update(value => !value);    
+    }
 
     let lastTimestamp;
     let animationFrame;
@@ -110,9 +118,33 @@
         </div>
      </div>
 
-        <div class="flex-1 flex justify-center">
-            <!-- maybe add some other buttons here -->
+        <div class="flex-1 flex justify-center" >
+            <div class="flex-1"></div>
+            <div class="flex bg-neutral-900 w-fit p-2 rounded-sm space-x-2">
+                <button class="cassette-btn">
+                    <img src={snip} alt='metronome' class="block w-4 h-4 mb-1.5">
+                    <span class="cassette-slot"></span>
+                </button>
+                <button class="cassette-btn" on:click={toggleMixingDeck}>
+                    <img src={mixer} alt='metronome' class="block w-4 h-4 mb-1.5">
+                    <span class="cassette-slot"></span>
+                </button>                
+                <button class="cassette-btn">
+                    <img src={metronome} alt='metronome' class="block w-4 h-4 mb-1.5">
+                    <span class="cassette-slot"></span>
+                </button>
+                <button class="cassette-btn">
+                    <img src={loop} alt='metronome' class="block w-4 h-4 mb-1.5">
+                    <span class="cassette-slot"></span>
+                </button>
+                <!-- <button class="cassette-btn">
+                    <img src={} alt='metronome' class="block w-4 h-4 mb-1.5">
+                    <span class="cassette-slot"></span>
+                </button> -->
+            </div>
         </div>
+
+
 
 </nav>
 
