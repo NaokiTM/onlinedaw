@@ -1,7 +1,8 @@
 
 <script>
     import plus from '$lib/assets/plus.png'
-    import { TracksArray } from "$lib/stores";
+    import keys from '$lib/assets/keys.png'
+    import { TracksArray } from "$lib/stores"
 
     function addTrack() {
         TracksArray.update(arr => {
@@ -9,7 +10,7 @@
             let nextId = maxId + 1;            //calculate index for the next tracks id
             return [   //Return a copy of the previous tracks array + object for the track to be added
                 ...arr, 
-                {id: nextId, instrument: "piano", muted: false}  //allow user to choose instrument before adding a track (do later)
+                {id: nextId, instrument: "keys", instrumentIcon: keys, muted: false}  //allow user to choose instrument before adding a track (do later)
             ]
         })
     }

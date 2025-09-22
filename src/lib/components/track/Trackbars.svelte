@@ -1,7 +1,6 @@
 <script lang="ts">
     import minus from '$lib/assets/minus.png'
     import plus from '$lib/assets/plus.png'
-
     import { noOfBars } from '$lib/stores';
     import { caretPos } from '$lib/stores';
     $: bars = Array.from({length: $noOfBars}) //$ makes it a reactive variable to allow changes to the array when bars are dynamically added / removed
@@ -35,9 +34,9 @@
 </div>
 
 <style>
-    .clipped-square {
 
-        /* Gives the caret the "pointer" look by cutting the 2 bottom corners diagonally*/
+    /* Gives the caret the "pointer" look by cutting the 2 bottom corners diagonally*/
+    .clipped-square {
         clip-path: polygon(
             0 0,      /* top-left */
             100% 0,   /* top-right */

@@ -1,7 +1,12 @@
-import { writable } from "svelte/store";
+//This is where the "global" stuff is (functions and variables that are updated in multiple components)
 
+import { writable } from "svelte/store";
+import keys from '$lib/assets/keys.png'
+
+
+//Need help differentiating if this sets the default header stuff when I create a new track, or if its the function in trackoptions.
 export const TracksArray = writable([
-    {id: 0, instrument: "piano", muted: false } //Store all the track information in this array. 
+    {id: 0, instrument: "keys", instrumentIcon: keys, muted: false } 
 ]);
 
 export const noOfBars = writable(8)   //Initial no. of bars
