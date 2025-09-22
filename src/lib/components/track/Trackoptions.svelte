@@ -17,7 +17,9 @@
 
 
 <div class="h-5 w-full bg-neutral-500">
-    <button class="h-full">
+
+    <!--button to add a new track-->
+    <button class="h-full">   
         <img src={plus} alt='add' class="hover:cursor-pointer" onclick={addTrack}>
     </button>
 </div>

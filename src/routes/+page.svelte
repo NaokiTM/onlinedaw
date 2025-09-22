@@ -2,7 +2,7 @@
   import Controlbar from "$lib/components/Controlbar.svelte";
   import Menubar from "$lib/components/Menubar.svelte";
   import Mixingdeck from "$lib/components/Mixingdeck.svelte";
-  import Tracks from "$lib/components/track/Tracks.svelte";
+  import Tracks from "$lib/components/Tracks.svelte";
 </script>
 
 <div class="flex flex-col h-screen select-none">

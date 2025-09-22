@@ -18,7 +18,9 @@
         })
 
         function moveDial(e: MouseEvent) {
-            if (!holding) return
+            if (!holding) return //Cant move dial if mb isnt being held
+
+
             //Calculates angle between x axis and vector line(center of dial to mouse position). 
             //We use the atan2 function, which takes the x and y distance from center to mouse position as arguments and returns angle (in radians)
             //Then use * (180 / Math.PI) to convert radians to degrees

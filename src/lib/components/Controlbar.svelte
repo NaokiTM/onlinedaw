@@ -10,6 +10,36 @@
     import record from'$lib/assets/record.png'
     import piano from '$lib/assets/piano.png'
     import loop from '$lib/assets/loop.png'
+
+    import { isPlaying } from '$lib/stores'
+    import { caretPos } from '$lib/stores'
+
+    let lastTimestamp;
+    let animationFrame;
+
+    const speed = 100   //This is in pixels per second. This needs to be translated into tempo, and is NOT the tempo itself.
+
+    function playTracks() {
+        //First resets the boolean to false (in case its already true), and make it true again to run. 
+        // idk why this works but it allows for clicking the play button multiple times 
+        isPlaying.set(true);
+        lastTimestamp = performance.now();    //What is this?
+        animationFrame = requestAnimationFrame(nextCaretPos);    
+    }
+
+    function pauseTracks() {
+        isPlaying.set(false);
+        cancelAnimationFrame(animationFrame);
+    }
+
+    //Comment later i dont really get what this does in detail
+    function nextCaretPos(timestamp) {        
+        animationFrame = requestAnimationFrame(nextCaretPos);
+        let toSeconds = (timestamp - lastTimestamp) / 1000; //Converts to seconds
+        lastTimestamp = timestamp;
+
+        caretPos.update(pos => pos + speed * toSeconds);
+    }
 </script>
 
 <nav class="bg-[#AEAEAE] text-white space-x-2 flex items-center text-sm p-2">
@@ -22,11 +52,11 @@
             <button class="border-none p-0">
                 <img src='{record}' alt='record' class="block w-6 h-6">
             </button>
-            <button class="cassette-btn">
+            <button class="cassette-btn" on:click={playTracks}>
                 <img src='{play}' alt='back' class="block w-4 h-4 mb-1.5">
                 <span class="cassette-slot"></span>
             </button>
-            <button class="cassette-btn">
+            <button class="cassette-btn" on:click={pauseTracks}>
                 <img src='{pause}' alt='play' class="block w-4 h-4 mb-1.5">
                 <span class="cassette-slot"></span>
             </button>

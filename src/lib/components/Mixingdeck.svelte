@@ -10,12 +10,15 @@
 
   let channels: number[] = [];  
 
+
+  // Calculate the amount of space each channel should fill
   function calculateChannels() {
     const totalWidthPerChannel = channelWidth + gap;
     const count = Math.floor(windowWidth / totalWidthPerChannel);
     channels = Array(count).fill(100);
   }
 
+  //Calls the calculateChannels function, listens for resize events to recalculate how channels fit
   onMount(() => {
     windowWidth = window.innerWidth;
     calculateChannels();
@@ -28,6 +31,8 @@
 </script>
 
 <div class="bottom-0 w-full h-[30vh] bg-[#5C5B5B] flex justify-center items-center gap-5">
+  
+  <!-- iteratively display Channels (each channel containing a mixchannel component and dial stacked on top) -->
   {#each channels as val, i (i)}
     <div class="">
       <Dial bind:value={channels[i]} />
