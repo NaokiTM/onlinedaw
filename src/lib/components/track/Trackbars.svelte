@@ -3,10 +3,12 @@
     import plus from '$lib/assets/plus.png'
 
     import { noOfBars } from '$lib/stores';
+    import { caretPos } from '$lib/stores';
     $: bars = Array.from({length: $noOfBars}) //$ makes it a reactive variable to allow changes to the array when bars are dynamically added / removed
 </script>
 
-<div class="h-5 w-full bg-neutral-700 flex">
+<div class="h-5 w-full bg-neutral-700 flex relative">
+    <div class="absolute -left-2.5 clipped-square h-5 w-5 bg-white" style="left: {$caretPos - 10}px"></div>
 
     <!-- iteratively display bars on top of track body -->
     {#each bars as _, i}
@@ -31,3 +33,18 @@
 
 
 </div>
+
+<style>
+    .clipped-square {
+
+        /* Gives the caret the "pointer" look by cutting the 2 bottom corners diagonally*/
+        clip-path: polygon(
+            0 0,      /* top-left */
+            100% 0,   /* top-right */
+            100% 50%, /* just above bottom-right */
+            50% 100%, /* bottom-right cut */
+            50% 100%, /* bottom-left cut */
+            0 50%     /* just above bottom-left */
+        );
+    }
+</style>

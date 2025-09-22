@@ -25,7 +25,7 @@
         </div>
         <div class="flex-8 relative">
             <!-- track caret -->
-            <div class="h-full absolute w-[2px] border-white border-1" style="left: {$caretPos}px"></div>  
+            <div class="h-full absolute w-[1px] bg-white" style="left: {$caretPos}px"></div>  
 
             <!-- Displays each tracks body / contents -->
             {#each $TracksArray}
