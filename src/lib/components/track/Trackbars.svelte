@@ -11,7 +11,7 @@
 
     <!-- iteratively display bars on top of track body -->
     {#each bars as _, i}
-        <div class="border-neutral-400 border-1 flex-1 h-5 flex justify-end items-center p-1">
+        <div class="border-neutral-500 border-r-1 flex-1 h-5 flex justify-end items-center p-1">
 
         <!-- print the bar number in each bar section (+1 to avoid zero indexing)-->
         {i + 1} 

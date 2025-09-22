@@ -11,8 +11,8 @@
 
 </script>
 
-<div class="bg-neutral-600 w-full h-15 border-neutral-400 border-1 flex space-x-2 relative">
-    <div class="border-r-1 w-5 border-r-neutral-400 items-center justify-center flex">
+<div class="bg-neutral-600 w-full h-15 border-neutral-500 border-b-1 flex space-x-2 relative">
+    <div class="border-r-1 w-5 border-r-neutral-500 items-center justify-center flex">
         {track.id + 1}
     </div>
     <img src={track.instrumentIcon} alt='instrumentIcon' class="pb-2 pt-1 pl-1">

@@ -3,7 +3,7 @@
 </script>
 
 <!-- The tracks entire body -->
-<div class="bg-neutral-900 h-15 border-neutral-600 border-1 flex">  
+<div class="bg-neutral-900 h-15 border-neutral-600 border-r-1 flex">  
 
   <!-- The segments in the tracks body representing the bars -->
     {#each Array.from({ length: $noOfBars }) as _, i}
