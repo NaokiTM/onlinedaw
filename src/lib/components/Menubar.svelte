@@ -1,6 +1,11 @@
 <script>
 // @ts-nocheck
     import logo from "$lib/assets/logo.png"
+    import { mixingDeckHidden } from "$lib/stores";
+
+    function toggleMixingDeck() {
+        mixingDeckHidden.update(value => !value);    
+    }
 </script>
 
 <nav class="bg-neutral-800 text-white space-x-2 flex items-center text-sm z-10">
@@ -46,6 +51,7 @@
 
         <ul class="dropdown-content menu p-2 shadow bg-neutral-700 w-52 absolute hidden group-hover:block rounded-sm">
             <li><button class="btn text-slate-300 rounded-sm">appearance</button></li>
+            <li><button class="btn text-slate-300 rounded-sm" on:click={toggleMixingDeck}>toggle mixing deck</button></li>
             <li><button class="btn text-slate-300 rounded-sm">idk</button></li>
         </ul>
     </div>
