@@ -35,3 +35,4 @@ You can preview the production build with `npm run preview`.
 <a target="_blank" href="https://icons8.com/icon/82734/repeat">Loop</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 <a target="_blank" href="https://icons8.com/icon/37784/plus-math">Plus</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 <a target="_blank" href="https://icons8.com/icon/85458/minus">Minus</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<a target="_blank" href="https://icons8.com/icon/Cg34s6HOqfFv/mute">Mute</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
