@@ -32,6 +32,12 @@
         cancelAnimationFrame(animationFrame);
     }
 
+    function rewindTracks() {
+        isPlaying.set(false);
+        cancelAnimationFrame(animationFrame);
+        caretPos.set(0)
+    }
+
     //Comment later i dont really get what this does in detail
     function nextCaretPos(timestamp) {        
         animationFrame = requestAnimationFrame(nextCaretPos);
@@ -60,7 +66,7 @@
                 <img src='{pause}' alt='play' class="block w-4 h-4 mb-1.5">
                 <span class="cassette-slot"></span>
             </button>
-            <button class="cassette-btn">
+            <button class="cassette-btn" on:click={rewindTracks}>
                 <img src='{back}' alt='record' class="block w-4 h-4 mb-1.5">
                 <span class="cassette-slot"></span>
             </button>
