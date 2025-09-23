@@ -7,7 +7,7 @@
 
   <!-- The segments in the tracks body representing the bars -->
     {#each Array.from({ length: $noOfBars }) as _, i}
-        <div class="border-neutral-800 border-1 w-1/8 h-15 justify-end flex-1 items-center p-1">
+        <div class="border-neutral-800 border-1 w-1/4 h-15 p-1 flex-shrink-0">
         </div>
     {/each}
 </div>

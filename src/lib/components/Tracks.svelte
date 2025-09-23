@@ -1,36 +1,53 @@
-<script>
-    import { TracksArray, caretPos} from "$lib/stores";
-    import Trackoptions from "$lib/components/track/Trackoptions.svelte";
-    import Trackbars from "$lib/components/track/Trackbars.svelte";
-    import Trackheader from "$lib/components/track/Trackheader.svelte";
-    import Trackbody from "$lib/components/track/Trackbody.svelte";
+<script lang="ts">
+  import { onMount } from "svelte";
+  import { TracksArray, caretPos } from "$lib/stores";
+  import Trackoptions from "$lib/components/track/Trackoptions.svelte";
+  import Trackbars from "$lib/components/track/Trackbars.svelte";
+  import Trackheader from "$lib/components/track/Trackheader.svelte";
+  import Trackbody from "$lib/components/track/Trackbody.svelte";
+
+  let headerEl: HTMLDivElement;
+  let trackbarsEl: HTMLDivElement;
+  let bodyEl: HTMLDivElement;
+
+  onMount(() => {
+    bodyEl.addEventListener("scroll", () => {
+      // sync header and body vertical scrolling
+      headerEl.scrollTop = bodyEl.scrollTop;
+
+      //sync body and bar numbers when horizontally scrolling
+      trackbarsEl.scrollLeft = bodyEl.scrollLeft;
+    });
+  });
 </script>
 
-<div class="flex flex-col text-white flex-1 overflow-auto">
-    <div class="flex">
-        <div class="flex-2">
-            <Trackoptions></Trackoptions>
-        </div>
+<!-- Here the first column takes 20% of space (headers) and the column containing the body takes up remaining space on the right-->
+<!-- the first row contains trackoptions and tracksbars (auto sized) and the second row contains header and body (sized to fill)-->
+<div class="grid grid-cols-[20%_1fr] grid-rows-[auto_1fr] flex-1 text-white overflow-hidden">
+  <!-- Top-left -->
+  <div class="sticky top-0 left-0 z-2">  <!--sticks to the top and left to avoid any scroll interference-->
+    <Trackoptions />
+  </div>
 
-        <!-- Displays bar numbers above the tracks contents -->
-        <div class="flex-8">
-            <Trackbars></Trackbars>            
-        </div>
-    </div>
-    <div class="flex overflow-y-auto h-full">
-        <div class="flex-2 bg-neutral-800">
-            {#each $TracksArray as track (track.id)}
-                <Trackheader track={track}></Trackheader>   <!-- pass the track object for each track containing various attributes of each(may need to pass it to trackbody later for changing track colour on mute etc)-->
-            {/each}
-        </div>
-        <div class="flex-8 relative">
-            <!-- track caret -->
-            <div class="h-full absolute w-[1px] bg-white" style="left: {$caretPos}px"></div>  
+  <!-- Top -->
+  <!--sticks to the top when scrolling horizontally (but not to the left so we can scroll through bars)-->
+  <div class="sticky top-0 z-10 bg-neutral-700 overflow-hidden" bind:this={trackbarsEl}> 
+    <Trackbars />
+  </div>
 
-            <!-- Displays each tracks body / contents -->
-            {#each $TracksArray}
-                <Trackbody></Trackbody>
-            {/each}
-        </div>
-    </div>
+  <!-- Left -->
+  <!--sticks to the left when scrolling horizontally (but not to the top so we can still scroll through tracks)--> 
+  <div class="sticky left-0 bg-neutral-800 overflow-hidden" bind:this={headerEl}>    
+    {#each $TracksArray as track (track.id)}
+      <Trackheader {track} />
+    {/each}
+  </div>
+
+  <!-- Main body -->
+  <div class="relative overflow-auto bg-neutral-900" bind:this={bodyEl}>
+    <div class="h-full absolute w-[1px] bg-white" style="left: {$caretPos}px"></div>
+    {#each $TracksArray}
+      <Trackbody />
+    {/each}
+  </div>
 </div>
