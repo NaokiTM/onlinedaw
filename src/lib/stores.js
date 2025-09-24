@@ -6,7 +6,19 @@ import keys from '$lib/assets/keys.png'
 
 //Need help differentiating if this sets the default header stuff when I create a new track, or if its the function in trackoptions.
 export const TracksArray = writable([
-    {id: 0, instrument: "keys", instrumentIcon: keys, muted: false } 
+  {
+    id: 0,
+    instrument: "keys",
+    instrumentIcon: keys,
+    muted: false,
+    regions: [
+      // {
+      //   barNo: 0,
+      //   length: 15,
+      //   contents: "add some music here",
+      // },
+    ],
+  },
 ]);
 
 export const noOfBars = writable(8)   //Initial no. of bars
