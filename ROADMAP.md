@@ -1,18 +1,5 @@
-# Basic Roadmap (for now, much to be added)
-- Menu bar (DONE)
-    - new project 
-    - open project 
-    - save 
-    - edit 
-    - undo and redo 
-    - appearance 
-    - copy and paste 
-    - account management (NOT DONE THE BUTTON FOR THIS)
-- Track control bar underneath menu (DONE)
-    - rewind, play, skip, pause, record, 
-    - bar number, beat number, key, time sig, tempo
-    - metronome 
-- Basic track interface (8 bars to start with) (NOT STARTED)
-    - name, volume meter, panning, mute track 
-    - ability to add infinite tracks (array of objects? or similar)
-    - ability to make tracks infinite length / infinite number of bars (a "+" button to add bars)
+# roadmap 
+
+- look for audio engine library (one in c)
+- fix caret length to cover full screen 
+- convert track array into objects to allow for audio playback by converting the tracks into graph nodes 
