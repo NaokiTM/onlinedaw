@@ -4,7 +4,7 @@
     export let value = 100;
 </script>
 
-<div class="flex flex-col gap-4 items-center">
+<div class="flex flex-col gap-4 items-center group">
 
     <!-- Value display
     <span id="slider-value" class="w-8 text-center text-black font-bold">{value}</span> -->
@@ -31,6 +31,11 @@
         <div class="w-0.5 bg-black h-32"></div>
         <!-- right -->
         <div id="right-meter" class="w-2 bg-[#353535] h-32"></div>
+        </div>
+
+        <!-- volume indicator on hover -->
+        <div class="hidden absolute group-hover:block menu rounded-sm p-2 shadow text-neutral-300">
+            {value}
         </div>
     </div>
 
