@@ -8,13 +8,25 @@
 
         //Onmount required since script runs before DOM created and thinks dial is null
         onMount (() => {
-            let dialBoundingRect = dial.getBoundingClientRect()
+            let dialBoundingRect!: DOMRect;
+            
+            function updateDialRect() {
+                dialBoundingRect = dial.getBoundingClientRect();
 
-            dialCenter = {
+                dialCenter = {
                 //distance to center = distance from edge of viewport + half the width or height of the dial (since center lies at halfway point)
                 x: dialBoundingRect.left + dialBoundingRect.width/2, 
                 y: dialBoundingRect.top + dialBoundingRect.height/2
             }
+            }
+
+            // initial calculation
+            updateDialRect();
+
+            // recalculate whenever the window resizes
+            window.addEventListener("resize", updateDialRect);
+
+
         })
 
         function moveDial(e: MouseEvent) {
