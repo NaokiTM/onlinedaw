@@ -17,6 +17,14 @@
     import { caretPos } from '$lib/stores'
 
     import { mixingDeckHidden } from "$lib/stores";
+    import { AudioEngine } from '../../audioEngine'
+    import { onMount } from 'svelte'
+
+    let audio
+
+    onMount(() => {
+        audio = new AudioEngine; // runs only in browser
+    });
 
     function toggleMixingDeck() {
         mixingDeckHidden.update(value => !value);    
@@ -33,6 +41,7 @@
         isPlaying.set(true);
         lastTimestamp = performance.now();    //What is this?
         animationFrame = requestAnimationFrame(nextCaretPos);    
+        audio.play()
     }
 
     function pauseTracks() {

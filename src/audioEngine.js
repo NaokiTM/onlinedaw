@@ -70,5 +70,7 @@ export class AudioEngine {
                 sourceNode.start(now + clip.startTime);
             }
         }
+
+        console.log("audioEngine is playing!")
     }
 }

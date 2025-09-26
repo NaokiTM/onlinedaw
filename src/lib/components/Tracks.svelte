@@ -44,7 +44,7 @@
   </div>
 
   <!-- Main body -->
-  <div class="relative overflow-auto bg-neutral-900" bind:this={bodyEl}>
+  <div class="relative overflow-auto bg-neutral-900 overscroll-none" bind:this={bodyEl}>
     <div class="h-full absolute w-[1px] bg-white" style="left: {$caretPos}px"></div>
 
     <!-- pass props to track body to identify it uniquely -->
