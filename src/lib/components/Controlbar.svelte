@@ -59,12 +59,11 @@
 <nav class="bg-[#AEAEAE] text-white space-x-2 flex items-center text-sm p-2">
 
     <!-- track controls -->
-     <div class="flex-1 flex">
-        <div class="flex flex-1">
-        </div>
-        <div class="bg-neutral-900 p-2 space-x-2 flex w-fit flex-shrink-0" >
-            <button class="border-none p-0">
-                <img src='{record}' alt='record' class="block w-6 h-6">
+     <div class="flex-1 flex justify-center">
+        <div class="bg-neutral-900 p-2 space-x-2 flex w-fit rounded-sm" >
+            <!-- svelte-ignore a11y_consider_explicit_label -->
+            <button class="record-btn">
+                <span class="record-slot"></span>
             </button>
             <button class="cassette-btn" on:click={playTracks}>
                 <img src='{play}' alt='back' class="block w-4 h-4 mb-1.5">

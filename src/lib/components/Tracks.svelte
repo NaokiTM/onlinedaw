@@ -46,8 +46,10 @@
   <!-- Main body -->
   <div class="relative overflow-auto bg-neutral-900" bind:this={bodyEl}>
     <div class="h-full absolute w-[1px] bg-white" style="left: {$caretPos}px"></div>
-    {#each $TracksArray}
-      <Trackbody />
+
+    <!-- pass props to track body to identify it uniquely -->
+    {#each $TracksArray as track, i (track.id)}
+      <Trackbody {track} trackIndex={i} />
     {/each}
   </div>
 </div>
