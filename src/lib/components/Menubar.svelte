@@ -64,7 +64,7 @@
         </ul>
     </div>
     <div class="relative inline-block group">
-        <button class="rounded-sm text-neutral-300">Help</button>
+        <button class="rounded-sm">Help</button>
 
         <ul class="dropdown-content menu p-2 shadow bg-neutral-700 w-52 absolute hidden group-hover:block rounded-sm">
             <li><button class="btn text-slate-300 rounded-sm">help me</button></li>
