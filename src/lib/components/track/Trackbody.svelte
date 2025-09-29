@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 // @ts-nocheck
 import { onMount } from "svelte";
 import { noOfBars, TracksArray } from "$lib/stores";
@@ -6,6 +6,8 @@ import AudioRegion from "./AudioRegion.svelte";
 
 export let track;        // current track object
 export let trackIndex;   // index of this track
+
+let tracksArea: HTMLElement
 
 let showMenu = false;
 let menuX = 0;
@@ -17,13 +19,12 @@ let clickedBarIndex = null;
 
 // right-click handler
 function handleRightClick(e, trackIndex, barIndex) {
-  let menuOffsetX = 285;
-  let menuOffsetY = 132;
 
+  const rect = tracksArea.getBoundingClientRect()
   e.preventDefault();
   showMenu = true;
-  menuX = e.pageX - menuOffsetX;
-  menuY = e.pageY - menuOffsetY;
+  menuX = e.pageX - rect.left;
+  menuY = e.pageY - rect.top;
   clickedTrackIndex = trackIndex;
   clickedBarIndex = barIndex;
 }
@@ -69,8 +70,9 @@ function deleteRegion() {
 
 <!-- The track’s body -->
 <!-- the double nested each is because it goes through each bar of each track to find the only bar that needs to contain a region -->
-<div class="bg-neutral-900 h-15 border-neutral-600 border-r-1 flex">
+<div class="bg-neutral-900 h-15 border-neutral-600 border-r-1 flex" bind:this={tracksArea}>
   {#each Array.from({ length: $noOfBars }) as _, barIndex}
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div
       class="border-neutral-800 border-1 w-1/4 h-15 p-0 flex-shrink-0"
       on:contextmenu={(e) => handleRightClick(e, trackIndex, barIndex)}

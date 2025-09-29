@@ -36,14 +36,14 @@
 
     <!-- caret (top bit) -->
     <div 
-        class="absolute -left-2.5 clipped-square h-5 w-5 bg-white" 
+        class="absolute -left-2.5 clipped-square h-5 w-5 bg-white hover:cursor-pointer" 
         style="left: {$caretPos - 10}px"
         onmousedown={startHolding}
     ></div>
 
     <!-- iteratively display bars on top of track body -->
     {#each bars as _, i}
-        <div class="border-neutral-500 border-r-1 h-5 w-1/4 items-center flex p-1 flex-shrink-0">
+        <div class="border-neutral-500 border-r-1 h-5 w-1/4 items-center flex p-1 flex-shrink-0 justify-end">
 
         <!-- print the bar number in each bar section (+1 to avoid zero indexing)-->
         {i + 1} 

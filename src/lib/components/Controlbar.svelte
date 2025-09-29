@@ -13,7 +13,7 @@
     import snip from '$lib/assets/snip.png'
     import mixer from '$lib/assets/mixer.png'
 
-    import { isPlaying } from '$lib/stores'
+    import { currentBar, currentBeat, keySig, timeSig, tonality, accidental, octave, tempo, isPlaying } from '$lib/stores'
     import { caretPos } from '$lib/stores'
 
     import { mixingDeckHidden } from "$lib/stores";
@@ -90,8 +90,9 @@
                 <img src='{skip}' alt='skip'class="block w-4 h-4 mb-1.5">
                 <span class="cassette-slot"></span>
             </button>
-            <button>
-                <img src='{loop}' alt='skip'class="block w-6 h-6">
+            <button class="cassette-btn">
+                <img src={loop} alt='metronome' class="block w-4 h-4 mb-1.5">
+                <span class="cassette-slot"></span>
             </button>
         </div> 
         <div class="flex-1">
@@ -104,24 +105,24 @@
      <div class="flex-1 justify-center flex">
         <div class="bg-sky-900 flex text-sky-500 p-1 w-fit">
             <div class="flex flex-col">
-                <div class="text-3xl">002</div>
+                <div class="text-3xl">{$currentBar}</div>
                 <div class="text-xs text-center">bar</div>
             </div>
-            <div class="border-sky-800 border-1 ml-1 mr-1 items-center"></div>
+            <div class="border-sky-800 border-1 ml-1 mr-1 w-fit items-center"></div>
             <div class="flex flex-col">
-                <div class="text-3xl">10</div>
+                <div class="text-3xl">{$currentBeat}</div>
                 <div class='text-xs text-center'>beat</div>
             </div>
             <div class="border-sky-800 border-1 ml-1 mr-1"></div>
             <div class="flex flex-col">
-                <div class="text-3xl text-center">120</div>
+                <div class="text-3xl text-center">{$tempo}</div>
                 <!-- <div class="text-center text-xs">keep</div> -->
                 <div class="text-xs text-center">tempo</div>
             </div>
             <div class="border-sky-800 border-1 ml-1 mr-1"></div>
             <div class="flex flex-col justify-between">
-                <div class="text-xl text-center">4/4</div>
-                <div class="text-xl text-center">Cmaj</div>
+                <div class="text-xl text-center">{$timeSig}</div>
+                <div class="text-lg text-center">{$keySig.toUpperCase()} {$accidental} {$tonality}</div>
             </div>
         </div>
      </div>
@@ -141,10 +142,7 @@
                     <img src={metronome} alt='metronome' class="block w-4 h-4 mb-1.5">
                     <span class="cassette-slot"></span>
                 </button>
-                <button class="cassette-btn">
-                    <img src={loop} alt='metronome' class="block w-4 h-4 mb-1.5">
-                    <span class="cassette-slot"></span>
-                </button>
+
                 <!-- <button class="cassette-btn">
                     <img src={} alt='metronome' class="block w-4 h-4 mb-1.5">
                     <span class="cassette-slot"></span>
