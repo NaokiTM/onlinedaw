@@ -21,12 +21,15 @@ export const TracksArray = writable([
   },
 ]);
 
-export const noOfBars = writable(8)   //Initial no. of bars
-export const caretPos = writable(0)  //Initial position of the track caret
-export const isPlaying = writable(false)   //Tracks whether the tracks are being played or not (and whether the caret should be moving)
 
+//information about current state of the song
+export const caretPos = writable(0)  //Initial position of the track caret
 export const currentBar = writable(1)   //bar number 1 (or zero for zero indexing purposes? idk)
 export const currentBeat = writable(1)   //which beat the caret is above / playing
+export const isPlaying = writable(false)   //Tracks whether the tracks are being played or not (and whether the caret should be moving)
+
+//Global states for song information
+export const noOfBars = writable(8)   //Initial no. of bars
 export const tempo = writable(120)
 export const keySig = writable("c")  //root note for key sig
 export const tonality = writable("major")   //major or minor key
@@ -34,9 +37,9 @@ export const accidental = writable("")  //is key signature sharp or flat
 export const octave = writable(0) //how many octaves above base is the key (default none)
 export const timeSig = writable("4/4")
 
-
-
+//booleans for toggling extra editors
 export const mixingDeckHidden = writable(true)
+export const midiEditorHidden = writable(true)
 
 //Toggle mute on a specific track
 export function toggleMute(id) {

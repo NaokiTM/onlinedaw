@@ -1,7 +1,7 @@
 <script lang="ts">
 // @ts-nocheck
 import { onMount } from "svelte";
-import { noOfBars, TracksArray } from "$lib/stores";
+import { noOfBars, TracksArray, midiEditorHidden } from "$lib/stores";
 import AudioRegion from "./AudioRegion.svelte";
 
 export let track;        // current track object
@@ -66,6 +66,11 @@ function deleteRegion() {
     return copy;
   });
 }
+
+
+function toggleMidiEditor() {
+    midiEditorHidden.update(value => !value)
+}
 </script>
 
 <!-- The track’s body -->
@@ -73,10 +78,7 @@ function deleteRegion() {
 <div class="bg-neutral-900 h-15 border-neutral-600 border-r-1 flex" bind:this={tracksArea}>
   {#each Array.from({ length: $noOfBars }) as _, barIndex}
     <!-- svelte-ignore a11y_no_static_element_interactions -->
-    <div
-      class="border-neutral-800 border-1 w-1/4 h-15 p-0 flex-shrink-0"
-      on:contextmenu={(e) => handleRightClick(e, trackIndex, barIndex)}
-    >
+    <div class="border-neutral-800 border-1 w-1/4 h-15 p-0 flex-shrink-0" on:contextmenu={(e) => handleRightClick(e, trackIndex, barIndex)}>
       {#each track.regions.filter(region => region.barNo === barIndex) as region} 
         <AudioRegion {region} />
       {/each}
@@ -92,5 +94,6 @@ function deleteRegion() {
   >
     <li class="px-4 py-2 hover:bg-gray-200" on:click={addRegion}>Add region</li>
     <li class="px-4 py-2 hover:bg-gray-200" on:click={deleteRegion}>Delete region</li>
+    <li class="px-4 py-2 hover:bg-gray-200" on:click={toggleMidiEditor}>Open track in MIDI editor</li>
   </ul>
 {/if}
