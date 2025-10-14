@@ -1,7 +1,7 @@
 <script lang="ts">
 // @ts-nocheck
 import { onMount } from "svelte";
-import { noOfBars, TracksArray, midiEditorHidden } from "$lib/stores";
+import { noOfBars, TracksArray, midiEditorHidden, whichMidiTrackOpen } from "$lib/stores";
 import AudioRegion from "./AudioRegion.svelte";
 
 export let track;        // current track object
@@ -70,6 +70,7 @@ function deleteRegion() {
 
 function toggleMidiEditor() {
     midiEditorHidden.update(value => !value)
+    whichMidiTrackOpen.set(clickedTrackIndex)
 }
 </script>
 
