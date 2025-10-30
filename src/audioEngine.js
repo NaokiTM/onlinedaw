@@ -16,6 +16,7 @@ export class AudioEngine {
         this.audioContext = new AudioContext;
         this.masterGain = this.audioContext.createGain();
         this.masterGain.connect(this.audioContext.destination)
+        // @ts-ignore
         this.tracks = [];
     }
 
