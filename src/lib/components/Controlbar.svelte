@@ -42,13 +42,32 @@
         event.target.value = val;
     }
 
-    function playTracks() {
-        //First resets the boolean to false (in case its already true), and make it true again to run. 
-        // idk why this works but it allows for clicking the play button multiple times 
+    async function playTracks() {
+        audio = new AudioEngine; // runs only in browser
+
+        let metroTrack = audio.addTrack()
+        const buffer = await audio.loadBuffer("/samples/techno-kick_C_minor.wav");
+        await audio.addClip(metroTrack, buffer) //await allows for the buffer to be loaded in (hence why async function)
+
+        //First resets the boolean to false (in case its already true), and make it true again to run.
+        // idk why this works but it allows for clicking the play button multiple times
         isPlaying.set(true);
-        lastTimestamp = performance.now();    //What is this?
-        animationFrame = requestAnimationFrame(nextCaretPos);    
-        audio.play()
+        lastTimestamp = performance.now(); //What is this?
+
+        //starts moving caret
+        animationFrame = requestAnimationFrame(nextCaretPos);
+
+        // function to play the track, then schedule the next playback
+        function playLoop() {
+            audio.play();
+
+            // schedule the next play after a delay (e.g. 1 second)
+            // adjust 1000 to your clip length in ms
+            setTimeout(playLoop, 1000);
+        }
+
+        // start the first play
+        playLoop();
     }
 
     function pauseTracks() {
