@@ -121,8 +121,47 @@
             </div>
             <div class="border-sky-800 border-1 ml-1 mr-1"></div>
             <div class="flex flex-col justify-between">
-                <div class="text-xl text-center">{$timeSig}</div>
-                <div class="text-lg text-center">{$keySig.toUpperCase()} {$accidental} {$tonality}</div>
+                <div class="text-xl text-center">
+                    <select name="timeSig" id="timeSig">
+                        <option value="4/4">4/4</option>
+                        <option value="3/4">3/4</option>
+                    </select>
+                </div>
+                <div class="text-lg text-center">
+                    <select name="key" id="key">
+                        <option value="C# Major">C# Major</option>
+                        <option value="F# Major">F# Major</option>
+                        <option value="B Major">B Major</option>
+                        <option value="E Major">E Major</option>
+                        <option value="A Major">A Major</option>
+                        <option value="D Major">D Major</option>
+                        <option value="G Major"></option>
+                        <option value="C Major"></option>
+                        <option value="F Major"></option>
+                        <option value="B♭ Major"></option>
+                        <option value="E♭ Major"></option>
+                        <option value="A♭ Major"></option>
+                        <option value="D♭ Major"></option>
+                        <option value="G♭ Major"></option>
+                        <option value="C♭ Major"></option>
+                        <option value="E♭ Major"></option>
+                        <option value="A# Minor"></option>
+                        <option value="D# Minor"></option>
+                        <option value="G# Minor"></option>
+                        <option value="C# Minor"></option>
+                        <option value="F# Minor"></option>
+                        <option value="B Minor"></option>
+                        <option value="E Minor"></option>
+                        <option value="A Minor"></option>
+                        <option value="D Minor"></option>
+                        <option value="G Minor"></option>
+                        <option value="C Minor"></option>
+                        <option value="F Minor"></option>
+                        <option value="B♭ Minor"></option>
+                        <option value="E♭ Minor"></option>
+                        <option value="A♭ Minor"></option>
+                    </select>
+                </div>
             </div>
         </div>
      </div>
