@@ -35,6 +35,13 @@
 
     const speed = 100   //This is in pixels per second. This needs to be translated into tempo, and is NOT the tempo itself.
 
+    function enforceThreeDigits(event) {
+        let val = event.target.value.replace(/\D/g, ''); // strip non-digits
+        if (val.length > 3) val = val.slice(val.length - 3); // keep last 3 digits
+        tempo.set(+val || 0);
+        event.target.value = val;
+    }
+
     function playTracks() {
         //First resets the boolean to false (in case its already true), and make it true again to run. 
         // idk why this works but it allows for clicking the play button multiple times 
@@ -115,14 +122,23 @@
             </div>
             <div class="border-sky-800 border-1 ml-1 mr-1"></div>
             <div class="flex flex-col">
-                <div class="text-3xl text-center">{$tempo}</div>
+                <div class="text-3xl text-center">
+                    <input 
+                        type="number" 
+                        min="0" 
+                        max="999" 
+                        bind:value={$tempo}
+                        class="custom-input" 
+                        on:input={enforceThreeDigits}
+                    />
+                </div>
                 <!-- <div class="text-center text-xs">keep</div> -->
                 <div class="text-xs text-center">tempo</div>
             </div>
             <div class="border-sky-800 border-1 ml-1 mr-1"></div>
             <div class="flex flex-col justify-between">
                 <div class="text-xl text-center">
-                    <select class="sig-drop">
+                    <select class="sig-drop w-full">
                         <option value="4/4">4/4</option>
                         <option value="3/4">3/4</option>
                         <option value="2/4">2/4</option>
@@ -132,7 +148,7 @@
                     </select>
                 </div>
                 <div class="text-lg text-center">
-                    <select class="sig-drop">
+                    <select class="sig-drop w-full">
                         <option value="C# Major" class="bg-blue-600">C# Major</option>
                         <option value="F# Major">F# Major</option>
                         <option value="B Major">B Major</option>
@@ -289,5 +305,21 @@
         border-radius: 4px;
         cursor: pointer;
         outline: none;
+    }
+
+    .custom-input {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: textfield; /* hides spinners in Firefox */
+
+        background-color: rgb(0, 74, 112);  /* same blue as dropdown */
+        color: rgb(5, 166, 244);                /* black text */
+        border: none;
+        padding: 4px 8px;           /* same slim padding */
+        font-size: 25px;
+        border-radius: 4px;
+        outline: none;
+        width: 70px;                /* optional: fixed width */
+        text-align: center;
     }
 </style>
