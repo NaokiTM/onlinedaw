@@ -122,14 +122,18 @@
             <div class="border-sky-800 border-1 ml-1 mr-1"></div>
             <div class="flex flex-col justify-between">
                 <div class="text-xl text-center">
-                    <select name="timeSig" id="timeSig">
+                    <select class="sig-drop">
                         <option value="4/4">4/4</option>
                         <option value="3/4">3/4</option>
+                        <option value="2/4">2/4</option>
+                        <option value="12/8">12/8</option>
+                        <option value="7/8">7/8</option>
+                        <option value="6/8">6/8</option>
                     </select>
                 </div>
                 <div class="text-lg text-center">
-                    <select name="key" id="key">
-                        <option value="C# Major">C# Major</option>
+                    <select class="sig-drop">
+                        <option value="C# Major" class="bg-blue-600">C# Major</option>
                         <option value="F# Major">F# Major</option>
                         <option value="B Major">B Major</option>
                         <option value="E Major">E Major</option>
@@ -270,5 +274,20 @@
         border-radius: 6px;
         box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3);
         margin-bottom: 2px;
+    }
+
+    .sig-drop {
+        appearance: none;            /* Remove default OS styling */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        background-color: rgb(0, 74, 112);   /* Blue background */
+        color: rgb(5, 166, 244);                /* Black text */
+        border: none;                /* Clean edge */
+        padding: 4px 24px 4px 8px;   /* Smaller padding → thinner look */
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        outline: none;
     }
 </style>
