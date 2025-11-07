@@ -1,12 +1,22 @@
 <script lang="ts">
     import minus from '$lib/assets/minus.png'
     import plus from '$lib/assets/plus.png'
-    import { noOfBars } from '$lib/stores';
+    import { currentBar, noOfBars, caretHeaderWidth } from '$lib/stores';
     import { caretPos } from '$lib/stores';
+  import { onMount } from 'svelte';
     $: bars = Array.from({length: $noOfBars}) //$ makes it a reactive variable to allow changes to the array when bars are dynamically added / removed
 
     let holding = false;
     let caretHeader: HTMLElement
+
+    //This is required to set a default headerwidth asap to determine what bar we are initially on (in stores.js)
+    onMount(() => {
+        caretHeaderWidth.set(caretHeader.getBoundingClientRect().width);
+        //for resize
+        const resizeObserver = new ResizeObserver(() => {
+          caretHeaderWidth.set(caretHeader.getBoundingClientRect().width);
+        });
+    });
 
     //update caret position while dragging with a mouse
     function moveCaret(e: MouseEvent) {
@@ -14,6 +24,10 @@
 
         const rect = caretHeader.getBoundingClientRect()
         $caretPos = e.clientX - rect.left;   //whole screen - left offset from edge of screen to left of caretHeader, which gives the correct x coords
+
+        // //To update currentbar with the 
+        // const barWidth = rect.width / 4;
+        // $currentBar = Math.floor($caretPos / barWidth);
     }
 
     function startHolding() {
