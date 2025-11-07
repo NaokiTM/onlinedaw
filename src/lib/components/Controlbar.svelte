@@ -37,7 +37,13 @@
 
     function enforceThreeDigits(event) {
         let val = event.target.value.replace(/\D/g, ''); // strip non-digits
-        if (val.length > 3) val = val.slice(val.length - 3); // keep last 3 digits
+
+        if (val.length === 2 && val[0] === '0') {
+            val = val[1]; // Keep only the newly typed digit
+        }
+
+        if (val.length > 3) val = val.slice(0, 3); // keep first 3 digits (last 3 means tempo can change just by typing, which isnt ideal if we already have 3 digits)
+
         tempo.set(+val || 0);
         event.target.value = val;
     }

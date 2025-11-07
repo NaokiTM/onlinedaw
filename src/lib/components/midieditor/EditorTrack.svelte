@@ -9,7 +9,7 @@
     function handleNote() {
         // if note already exists then remove, if note doesnt exist then add. default length of 1 (fills the bar clicked on)
         
-
+        
     }
 </script>
 
