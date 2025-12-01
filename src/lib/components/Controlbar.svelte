@@ -72,7 +72,7 @@
             setTimeout(playLoop, 1000);
         }
 
-        // start the first play
+        // // start the first play
         playLoop();
     }
 
@@ -174,7 +174,7 @@
                 </div>
                 <div class="text-lg text-center">
                     <select class="sig-drop w-full">
-                        <option value="C# Major" class="bg-blue-600">C# Major</option>
+                        <option value="C# Major">C# Major</option>
                         <option value="F# Major">F# Major</option>
                         <option value="B Major">B Major</option>
                         <option value="E Major">E Major</option>

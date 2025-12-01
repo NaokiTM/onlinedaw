@@ -13,10 +13,14 @@ export const TracksArray = writable([
     muted: false,
     regions: [
       {
-        barNo: 0,
-        length: 15,
+        barNo: 0,   //which bar the region is in
+        length: 0,  //Length of the region
         notes: [
-          {noteId: 1, pos: 60, length: 1}   //pos is the number of keys down the note is (which note is being played out of the 8 octaves),length is the amount of space it takes  up in a bar
+          {
+            noteId: 1,   //the id of the note is how many across it is generally. it will be played in sequence of the id
+            pos: 1,    //pos is the number of keys down the note is (which note is being played out of the 8 octaves),length is the amount of space it takes  up in a bar
+            length: 1
+          }
         ],
       },
     ],

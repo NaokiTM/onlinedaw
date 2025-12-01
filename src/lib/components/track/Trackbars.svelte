@@ -23,7 +23,11 @@
         if (!holding) return;
 
         const rect = caretHeader.getBoundingClientRect()
-        $caretPos = e.clientX - rect.left;   //whole screen - left offset from edge of screen to left of caretHeader, which gives the correct x coords
+        const newCaretPos = e.clientX - rect.left //whole screen - left offset from edge of screen to left of caretHeader, which gives the correct x coords
+        if (newCaretPos >= 0) {  //Ensure The caret doesnt hide under caretHeaders
+            $caretPos = newCaretPos  
+        }
+
 
         // //To update currentbar with the 
         // const barWidth = rect.width / 4;
@@ -32,19 +36,22 @@
 
     function startHolding() {
         holding = true
+
+        window.addEventListener("mousemove", moveCaret)
+        window.addEventListener("mouseup", stopHolding)
     }
 
     function stopHolding() {
         holding = false
+
+        window.removeEventListener("mousemove", moveCaret);
+        window.removeEventListener("mouseup", stopHolding);
     }
 </script>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div 
     class="h-5 w-full bg-neutral-700 flex relative flex-shrink-0"
-    onmouseleave={stopHolding}
-    onmouseup={stopHolding}
-    onmousemove={moveCaret}
     bind:this = {caretHeader}
 >
 
