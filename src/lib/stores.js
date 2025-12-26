@@ -17,9 +17,10 @@ export const TracksArray = writable([
         length: 0,  //Length of the region
         notes: [
           {
-            noteId: 1,   //the id of the note is how many across it is generally. it will be played in sequence of the id
+            //AT THE MOMENT, EACH NOTE FITS EXACTLY ONE BAR. ADD WHEN NOTE LENGTHS CHANGE noteId: 1,   //the id of the note is how many across it is generally. it will be played in sequence of the id
             pos: 1,    //pos is the number of keys down the note is (which note is being played out of the 8 octaves),length is the amount of space it takes  up in a bar
-            length: 1
+            //POS CAN GO UP TO 12 X 8 = 72.  
+            // length: 1
           }
         ],
       },
@@ -60,7 +61,7 @@ export const currentBar = derived(
 
 export const currentBeat = writable(1)   //which beat the caret is above / playing
 export const isPlaying = writable(false)   //Tracks whether the tracks are being played or not (and whether the caret should be moving)
-export const whichMidiTrackOpen = writable(null)  //stores which track is open in the midi editor. 0 if none of them open? 
+export const whichMidiTrackOpen = writable(0)  //stores which track is open in the midi editor. 0 if none of them open? 
 
 //booleans for toggling extra editors
 export const mixingDeckHidden = writable(true)
