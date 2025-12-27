@@ -19,11 +19,7 @@
 
             //If a region doesnt exist then make a new one 
             if (!region) {
-                region = {
-                    barNo: barIndex,
-                    length: 1,
-                    notes: []
-                };
+                region = {barNo: barIndex, length: 1, notes: []};
                 track.regions = [...track.regions, region];
             }
 
@@ -31,6 +27,14 @@
                 pos: notePos,  //Determines the note the new note is going in
                 length: 1
             };
+
+            //check if note already exists, if it does then remove and return false
+            let noteToFind = region.notes.find(note => note.pos === notePos)
+            if (noteToFind) {
+                region.notes = region.notes.filter(note => note.pos !== notePos);
+                copy[trackIndex] = track;
+                return copy;
+            }
 
             //appends the new note to the existing notes in the region
             region.notes = [...region.notes, newNote]
@@ -82,7 +86,6 @@
       {/each}
     </div>
   {/each}
-
 {/each}
 
 
