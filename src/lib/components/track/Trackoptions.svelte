@@ -13,9 +13,6 @@
                 {id: nextId, instrument: "keys", instrumentIcon: keys, muted: false, regions: []}  //allow user to choose instrument before adding a track (do later)
             ]
         })
-
-        //creates new array in the chosen track to store a regions (containing objects)
-        TracksArray.update(track => [...r, []]);
     }
 </script>
 

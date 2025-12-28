@@ -49,7 +49,7 @@
     {#each Array.from({ length: $noOfBars }) as _, j}
       <div class="border-neutral-800 border-1 w-1/4 h-6 p-0 flex-shrink-0" on:click={() => handleNote(index, j)} >
         <!-- For each  -->
-        {#each track.regions.filter(region => region.barNo === barIndex) as region} 
+        {#each ($TracksArray[trackIndex].regions ?? []).filter(region => region.barNo === j) as region}
           <AudioRegion {region} />
         {/each}
       </div>
