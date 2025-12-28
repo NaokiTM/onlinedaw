@@ -16,6 +16,8 @@
         const resizeObserver = new ResizeObserver(() => {
           caretHeaderWidth.set(caretHeader.getBoundingClientRect().width);
         });
+
+        resizeObserver.observe(caretHeader);  //Observe the caretHeader for resizes
     });
 
     //update caret position while dragging with a mouse
