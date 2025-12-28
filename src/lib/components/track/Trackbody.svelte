@@ -3,6 +3,7 @@
 import { onMount } from "svelte";
 import { noOfBars, TracksArray, midiEditorHidden, whichMidiTrackOpen } from "$lib/stores";
 import AudioRegion from "./AudioRegion.svelte";
+  import NoteRegion from "../midieditor/NoteRegion.svelte";
 
 export let track;        // current track object
 export let trackIndex;   // index of this track
@@ -44,7 +45,7 @@ function addRegion() {
     const newRegion = {
       barNo: clickedBarIndex,
       length: 1,
-      contents: "new notes"
+      notes: []
     };
 
     track.regions = [...track.regions, newRegion];
@@ -86,7 +87,6 @@ function toggleMidiEditor() {
       {/each}
     </div>
   {/each}
-  
 </div>
 
 <!-- Menu that shows when right clicked -->
