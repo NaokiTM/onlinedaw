@@ -11,19 +11,19 @@ export const TracksArray = writable([
     instrument: "keys",
     instrumentIcon: keys,
     muted: false,
-    regions: [
-      {
-        barNo: 0,   //which bar the region is in
-        length: 0,  //Length of the region
-        notes: [
-          {
-            //AT THE MOMENT, EACH NOTE FITS EXACTLY ONE BAR. ADD WHEN NOTE LENGTHS CHANGE noteId: 1,   //the id of the note is how many across it is generally. it will be played in sequence of the id
-            pos: 1,    //pos is the number of keys down the note is (which note is being played out of the 8 octaves),length is the amount of space it takes  up in a bar
-            //POS CAN GO UP TO 12 X 8 = 72.  
-            // length: 1
-          }
-        ],
-      },
+    regions: [  //start with no regions initially
+      // { 
+      //   barNo: 0,   //which bar the region is in
+      //   length: 0,  //Length of the region
+      //   notes: [
+      //     {
+      //       //AT THE MOMENT, EACH NOTE FITS EXACTLY ONE BAR. ADD WHEN NOTE LENGTHS CHANGE noteId: 1,   //the id of the note is how many across it is generally. it will be played in sequence of the id
+      //       pos: 1,    //pos is the number of keys down the note is (which note is being played out of the 8 octaves),length is the amount of space it takes  up in a bar
+      //       //POS CAN GO UP TO 12 X 8 = 72.  
+      //       // length: 1
+      //     }
+      //   ],
+      // },
     ],
   },
 ]);
