@@ -38,6 +38,12 @@ onMount(() => {
 });
 
 function addRegion() {
+  const regionHere = track.regions.find(region => region.barNo === clickedBarIndex);
+
+  if (regionHere) {
+    return;  //cancel if region already exists
+  }
+
   TracksArray.update(tracks => {
     const copy = [...tracks];
     const track = copy[clickedTrackIndex];
