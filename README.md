@@ -1,6 +1,8 @@
-# Online DAW
-- DAW on the web, will change the name later
+# SynthaSonik
+- Web-based DAW
 - powered by [`sv`](https://github.com/sveltejs/cli).
+- Uses the audioEngine JS library
+- Probably the only name not taken by an obscure DJ or speaker company
 
 ## Developing
 
