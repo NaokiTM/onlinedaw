@@ -1,19 +1,22 @@
 <script>
 // @ts-nocheck
     import logo from "$lib/assets/logo.png"
+    import logoFull from "$lib/assets/logofull.png"
     import { mixingDeckHidden } from "$lib/stores";
+
+    let aboutOpen = false;
 
     function toggleMixingDeck() {
         mixingDeckHidden.update(value => !value);    
     }
 </script>
-
+<div>
 <nav class="bg-neutral-800 text-white space-x-2 flex items-center text-sm z-10">
 
     <!-- ADD ATTRIBUTION LATER / SWITCH OUT LOGO -->
     <!-- <a href="https://www.flaticon.com/free-icons/music-note" title="music note icons">Music note icons created by Freepik - Flaticon</a>  -->
-    <div class="inline-block scale-50">
-        <img src={logo} alt="logo">
+    <div class="relative inline-block w-auto">
+        <img src={logo} alt="logo" class="scale-80 h-8">
     </div>
 
     <div class="relative inline-block group">
@@ -68,10 +71,30 @@
 
         <ul class="dropdown-content menu p-2 shadow bg-neutral-700 w-52 absolute hidden group-hover:block rounded-sm">
             <li><button class="btn text-slate-300 rounded-sm">help me</button></li>
-            <li><button class="btn text-slate-300 rounded-sm">about</button></li>
+            <li><button class="btn text-slate-300 rounded-sm" on:click={aboutOpen = true}>about</button></li>
         </ul>
     </div>
 </nav>
+
+{#if aboutOpen}
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
+  <!-- svelte-ignore a11y_no_static_element_interactions -->
+  <!-- scrim -->
+    <div class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center" on:click={() => (aboutOpen = false)}>
+        <!-- modal -->
+        <div class="bg-neutral-800 text-white rounded-lg p-8 min-w-[300px]" on:click|stopPropagation>
+            <img src={logoFull} alt="logo" class="scale-100 h-12 mb-4">
+            <p>Online DAW interface using 
+            <br>Svelte and audioEngine.</p>
+            <a href="https://github.com/NaokiTM/onlinedaw" class="text-blue-400 underline mt-2 block">Source Code</a>
+
+            <button class="mt-4 px-4 py-1 bg-neutral-600 rounded" on:click={() => (aboutOpen = false)}>Close</button>
+        </div>
+    </div>
+{/if}
+
+</div>
+
 
 <style>
     button {
