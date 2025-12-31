@@ -19,6 +19,7 @@
     import { mixingDeckHidden } from "$lib/stores";
     import { AudioEngine } from '../../audioEngine'
     import { onMount } from 'svelte'
+  import Menubar from './Menubar.svelte';
 
     let audio
 
@@ -97,7 +98,10 @@
     }
 </script>
 
-<nav class="bg-[#AEAEAE] text-white space-x-2 flex items-center text-sm p-2">
+<nav class="bg-[#292828] text-white space-x-2 flex items-center text-sm p-2">
+
+    <!-- Menu  -->
+    <Menubar />
 
     <!-- track controls -->
      <div class="flex-1 flex justify-center">
@@ -127,27 +131,24 @@
                 <span class="cassette-slot"></span>
             </button>
         </div> 
-        <div class="flex-1">
-
-        </div>
      </div>
 
 
     <!-- track information -->
-     <div class="flex-1 justify-center flex">
-        <div class="bg-sky-900 flex text-sky-500 p-1 w-fit">
+     <div class="justify-center flex">
+        <div class="bg-sky-900 flex text-sky-500 pl-1 w-fit rounded-lg pb-0.5">
             <div class="flex flex-col">
-                <div class="text-3xl">{$currentBar}</div>
+                <div class="text-xl">{$currentBar}</div>
                 <div class="text-xs text-center">bar</div>
             </div>
             <div class="border-sky-800 border-1 ml-1 mr-1 w-fit items-center"></div>
             <div class="flex flex-col">
-                <div class="text-3xl">{$currentBeat}</div>
+                <div class="text-xl">{$currentBeat}</div>
                 <div class='text-xs text-center'>beat</div>
             </div>
             <div class="border-sky-800 border-1 ml-1 mr-1"></div>
             <div class="flex flex-col">
-                <div class="text-3xl text-center">
+                <div class="text-center">
                     <input 
                         type="number" 
                         min="0" 
@@ -161,8 +162,8 @@
                 <div class="text-xs text-center">tempo</div>
             </div>
             <div class="border-sky-800 border-1 ml-1 mr-1"></div>
-            <div class="flex flex-col justify-between">
-                <div class="text-xl text-center">
+            <div class="flex flex-row justify-between">
+                <div class="text-xl text-center flex-col justify-center items-center flex">
                     <select class="sig-drop w-full">
                         <option value="4/4">4/4</option>
                         <option value="3/4">3/4</option>
@@ -171,8 +172,10 @@
                         <option value="7/8">7/8</option>
                         <option value="6/8">6/8</option>
                     </select>
+                    <div class="text-xs text-center">time</div>
                 </div>
-                <div class="text-lg text-center">
+                <div class="border-sky-800 border-1 ml-1 mr-1"></div>
+                <div class="text-lg text-center flex flex-col justify-center items-center">
                     <select class="sig-drop w-full">
                         <option value="C# Major">C# Major</option>
                         <option value="F# Major">F# Major</option>
@@ -206,10 +209,12 @@
                         <option value="E♭ Minor">E♭ Minor</option>
                         <option value="A♭ Minor">A♭ Minor</option>
                     </select>
+                    <div class="text-xs text-center">Key Sig</div>
                 </div>
             </div>
         </div>
      </div>
+        <div class="flex-1"></div>
 
         <div class="flex-1 flex justify-center" >
             <div class="flex-1"></div>
@@ -321,15 +326,18 @@
         appearance: none;            /* Remove default OS styling */
         -webkit-appearance: none;
         -moz-appearance: none;
+        background-image: none;   /* important */
 
-        background-color: rgb(0, 74, 112);   /* Blue background */
-        color: rgb(5, 166, 244);                /* Black text */
+        background-color: rgb(0, 74, 112);
+        color: rgb(5, 166, 244);               
         border: none;                /* Clean edge */
-        padding: 4px 24px 4px 8px;   /* Smaller padding → thinner look */
+        padding: 0;
         font-size: 14px;
         border-radius: 4px;
         cursor: pointer;
         outline: none;
+        width: fit-content;
+        margin-right: 1px;
     }
 
     .custom-input {
@@ -339,12 +347,15 @@
 
         background-color: rgb(0, 74, 112);  /* same blue as dropdown */
         color: rgb(5, 166, 244);                /* black text */
-        border: none;
-        padding: 4px 8px;           /* same slim padding */
-        font-size: 25px;
+        border: none;       /* same slim padding */
+        font-size: 20px;
+
+        line-height: 1;         /* IMPORTANT */
+        padding: 0;  
         border-radius: 4px;
         outline: none;
-        width: 70px;                /* optional: fixed width */
+        width: 3ch;                /* optional: fixed width */
         text-align: center;
+        padding-top: 2px;
     }
 </style>

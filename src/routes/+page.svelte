@@ -8,7 +8,6 @@
 </script>
 
 <div class="flex flex-col h-screen select-none">
-    <Menubar></Menubar>
     <Controlbar></Controlbar>
 
     {#if !$midiEditorHidden}

@@ -11,7 +11,7 @@
     }
 </script>
 <div>
-<nav class="bg-neutral-800 text-white space-x-2 flex items-center text-sm z-10">
+<nav class="bg-neutral-800 text-white flex items-center rounded-lg text-sm z-10 font-semibold">
 
     <!-- ADD ATTRIBUTION LATER / SWITCH OUT LOGO -->
     <!-- <a href="https://www.flaticon.com/free-icons/music-note" title="music note icons">Music note icons created by Freepik - Flaticon</a>  -->
@@ -19,7 +19,7 @@
         <img src={logo} alt="logo" class="scale-80 h-8">
     </div>
 
-    <div class="relative inline-block group">
+    <div class="relative inline-block group z-30">
         <button class="rounded-sm pl-1">File</button>
 
         <ul class="dropdown-content menu p-2 shadow bg-neutral-700 w-52 absolute hidden group-hover:block rounded-sm">
@@ -31,7 +31,7 @@
         </ul>
     </div>
 
-    <div class="relative inline-block group">
+    <div class="relative inline-block group z-30">
         <button class="rounded-sm">Edit</button>
 
         <ul class="dropdown-content menu p-2 shadow bg-neutral-700 w-52 absolute hidden group-hover:block rounded-sm">
@@ -42,14 +42,14 @@
 
         </ul>
     </div>
-    <div class="relative inline-block group">
+    <div class="relative inline-block group z-30">
         <button class="rounded-sm">Add</button>
 
         <ul class="dropdown-content menu p-2 shadow bg-neutral-700 w-52 absolute hidden group-hover:block rounded-sm">
             <li><button class="btn text-slate-300 rounded-sm">Add instrument</button></li>
         </ul>
     </div>
-    <div class="relative inline-block group">
+    <div class="relative inline-block group z-30">
         <button class="rounded-sm">View</button>
 
         <ul class="dropdown-content menu p-2 shadow bg-neutral-700 w-52 absolute hidden group-hover:block rounded-sm">
@@ -58,7 +58,7 @@
             <li><button class="btn text-slate-300 rounded-sm">idk</button></li>
         </ul>
     </div>
-    <div class="relative inline-block group">
+    <div class="relative inline-block group z-30">
         <button class="rounded-sm">Options</button>
 
         <ul class="dropdown-content menu p-2 shadow bg-neutral-700 w-52 absolute hidden group-hover:block rounded-sm">
@@ -66,7 +66,7 @@
             <li><button class="btn text-slate-300 rounded-sm">option2</button></li>
         </ul>
     </div>
-    <div class="relative inline-block group">
+    <div class="relative inline-block group z-30">
         <button class="rounded-sm">Help</button>
 
         <ul class="dropdown-content menu p-2 shadow bg-neutral-700 w-52 absolute hidden group-hover:block rounded-sm">
