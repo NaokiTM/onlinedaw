@@ -20,6 +20,7 @@
     import { AudioEngine } from '../../audioEngine'
     import { onMount } from 'svelte'
   import Menubar from './Menubar.svelte';
+  import VolumeSlider from './track/VolumeSlider.svelte';
 
     let audio
 
@@ -214,10 +215,14 @@
             </div>
         </div>
      </div>
-        <div class="flex-1"></div>
+        <div class="flex-1">
+        </div>
 
         <div class="flex-1 flex justify-center" >
-            <div class="flex-1"></div>
+            <div class="flex-1 flex flex-col justify-center items-center scale-125 space-y-1"> 
+                <div class="text-xs">Master Volume</div>
+                <VolumeSlider></VolumeSlider>
+            </div>
             <div class="flex bg-neutral-900 w-fit p-2 rounded-lg space-x-2">
                 <button class="cassette-btn">
                     <img src={snip} alt='metronome' class="block w-4 h-4 mb-1.5">

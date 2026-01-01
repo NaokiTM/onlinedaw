@@ -5,6 +5,7 @@
     import { toggleMute } from '$lib/stores';
     import Dial from '../Dial.svelte';
     import ColorMenu from '../menus/ColorMenu.svelte';
+    import VolumeSlider from './VolumeSlider.svelte';
 
     function handleMute() {
         toggleMute(track.id)  //The actual toggleMute function is in stores.js
@@ -29,9 +30,8 @@
             </button>
 
             <!-- volume slider -->
-             <div class="">
-                <input type="range" min="1" max="100" value="50" class="w-30 h-3 vol-slider rounded-xl bg-neutral-900">    
-             </div>
+             <!-- pass track.id to VolumeSlider later -->
+            <VolumeSlider></VolumeSlider>
         </div>
         <div class="absolute right-0 pr-1 pt-1">
             <div class="flex items-end">
