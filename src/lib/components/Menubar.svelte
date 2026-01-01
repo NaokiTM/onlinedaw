@@ -2,12 +2,36 @@
 // @ts-nocheck
     import logo from "$lib/assets/logo.png"
     import logoFull from "$lib/assets/logofull.png"
-    import { mixingDeckHidden } from "$lib/stores";
+    import waveformIcon from "$lib/assets/waveformIcon.png"
+    import { mixingDeckHidden, TracksArray } from "$lib/stores";
 
     let aboutOpen = false;
 
     function toggleMixingDeck() {
         mixingDeckHidden.update(value => !value);    
+    }
+
+    function importSample() {
+        //trigger external file input dialog
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'audio/*';
+        input.onchange = e => {
+            const file = e.target.files[0];
+
+            if (!file) {
+                return; // user cancelled
+            }
+
+            //When playing the tracks, we need to pass a url and not a file object
+            const url = URL.createObjectURL(file);
+
+            //create new track with the imported sample
+            TracksArray.update(tracks => [...tracks, { id: tracks.length, instrument: "sample", sample: url, instrumentIcon: waveformIcon, color: "#00bf00", muted: false, regions: [] }]);
+            
+        };
+        input.click();
+
     }
 </script>
 <div>
@@ -27,6 +51,7 @@
             <li><button class="btn text-slate-300 rounded-sm">Open project</button></li>
             <li><button class="btn text-slate-300 rounded-sm">Save project</button></li>
             <li><button class="btn text-slate-300 rounded-sm">Share</button></li>
+            <li><button class="btn text-slate-300 rounded-sm" on:click={importSample}>Import Sample</button></li>
             <li><button class="btn text-slate-300 rounded-sm">Close project</button></li>
         </ul>
     </div>

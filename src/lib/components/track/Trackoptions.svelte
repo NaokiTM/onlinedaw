@@ -10,7 +10,7 @@
             let nextId = maxId + 1;            //calculate index for the next tracks id
             return [   //Return a copy of the previous tracks array + object for the track to be added
                 ...arr, 
-                {id: nextId, instrument: "keys", instrumentIcon: keys, color: "#00bf00", muted: false, regions: []}  //allow user to choose instrument before adding a track (do later)
+                {id: nextId, instrument: "keys", sample: null, instrumentIcon: keys, color: "#00bf00", muted: false, regions: []}  //allow user to choose instrument before adding a track (do later)
             ]
         })
     }

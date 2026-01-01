@@ -13,7 +13,7 @@
     import snip from '$lib/assets/snip.png'
     import mixer from '$lib/assets/mixer.png'
 
-    import { currentBar, currentBeat, keySig, timeSig, tonality, accidental, octave, tempo, isPlaying } from '$lib/stores'
+    import { currentBar, currentBeat, keySig, timeSig, tonality, accidental, octave, tempo, isPlaying, TracksArray } from '$lib/stores'
     import { caretPos } from '$lib/stores'
 
     import { mixingDeckHidden } from "$lib/stores";
@@ -53,9 +53,17 @@
     async function playTracks() {
         audio = new AudioEngine; // runs only in browser
 
-        let metroTrack = audio.addTrack()
-        const buffer = await audio.loadBuffer("/samples/techno-kick_C_minor.wav");
-        await audio.addClip(metroTrack, buffer) //await allows for the buffer to be loaded in (hence why async function)
+        //Loop thorugh all tracks and for as many tracks create an audio.newtrack, find the tracks sample and save as buffer, create a clip, and when all have looped through play the clips
+        //do later, fix unknown content type passed error when importing samples
+        const tracks = $TracksArray;
+        for (let i = 0; i < tracks.length; i++) { 
+            let track = audio.addTrack() 
+            const sample = tracks[i].sample; 
+            if (sample) {
+                const buffer = await audio.loadBuffer(sample);
+                await audio.addClip(track, buffer)
+            } 
+        }
 
         //First resets the boolean to false (in case its already true), and make it true again to run.
         // idk why this works but it allows for clicking the play button multiple times
