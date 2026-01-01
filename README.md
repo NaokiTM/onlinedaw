@@ -1,4 +1,5 @@
-# SynthaSonik
+![logo](https://raw.githubusercontent.com/NaokiTM/onlinedaw/main/src/lib/assets/logofull.png)
+
 - Web-based DAW
 - powered by [`sv`](https://github.com/sveltejs/cli).
 - Uses the audioEngine JS library
