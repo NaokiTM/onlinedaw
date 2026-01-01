@@ -1,5 +1,5 @@
 <div class="flex flex-col">
-    {#each Array.from({ length: 32}) as _, i}
+    {#each Array.from({ length: 8}) as _, i}
         <!-- 2nd variation -->
         <div class="flex">
             <div class="w-full">

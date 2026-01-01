@@ -7,7 +7,7 @@
 
     function handleNote(octaveIndex: number, rowIndex: number, barIndex: number) {
         // if note already exists then remove, if note doesnt exist then add. default length of 1 (fills the bar clicked on)
-        const rowsPerOctave = 8
+        const rowsPerOctave = 12
         const notePos = octaveIndex * rowsPerOctave + rowIndex;
 
         TracksArray.update(tracks => {
@@ -47,7 +47,7 @@
 
     //helper function for checking if a note exists at a spot 
     function hasNoteHelper(octaveIndex: number, barIndex: number, rowIndex: number) {
-        const rowsPerOctave = 8
+        const rowsPerOctave = 12
         const notePos = octaveIndex * rowsPerOctave + rowIndex
 
 
@@ -64,9 +64,9 @@
 </script>
 
 <!-- 8 octaves -->
-{#each Array.from({ length: 12 }) as _, octaveIndex}
+{#each Array.from({ length: 8 }) as _, octaveIndex}
 
-  {#each Array.from({ length: 6 }) as _, rowIndex}
+  {#each Array.from({ length: 12 }) as _, rowIndex}
     <div class="bg-neutral-900 h-6 flex">
       {#each Array.from({ length: $noOfBars }) as _, barIndex}
       

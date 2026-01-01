@@ -3,7 +3,7 @@
 import { onMount } from "svelte";
 import { noOfBars, TracksArray, midiEditorHidden, whichMidiTrackOpen } from "$lib/stores";
 import AudioRegion from "./AudioRegion.svelte";
-  import NoteRegion from "../midieditor/NoteRegion.svelte";
+  import NoteRegion from "../editor/NoteRegion.svelte";
 
 export let track;        // current track object
 export let trackIndex;   // index of this track
