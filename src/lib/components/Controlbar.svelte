@@ -105,7 +105,7 @@
 
     <!-- track controls -->
      <div class="flex-1 flex justify-center">
-        <div class="bg-neutral-900 p-2 space-x-2 flex w-fit rounded-sm" >
+        <div class="bg-neutral-900 p-2 space-x-2 flex w-fit rounded-lg" >
             <!-- svelte-ignore a11y_consider_explicit_label -->
             <button class="record-btn">
                 <span class="record-slot"></span>
@@ -218,7 +218,7 @@
 
         <div class="flex-1 flex justify-center" >
             <div class="flex-1"></div>
-            <div class="flex bg-neutral-900 w-fit p-2 rounded-sm space-x-2">
+            <div class="flex bg-neutral-900 w-fit p-2 rounded-lg space-x-2">
                 <button class="cassette-btn">
                     <img src={snip} alt='metronome' class="block w-4 h-4 mb-1.5">
                     <span class="cassette-slot"></span>

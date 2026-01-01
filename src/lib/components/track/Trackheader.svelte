@@ -4,6 +4,7 @@
     import unmuted from '$lib/assets/unmuted.png'
     import { toggleMute } from '$lib/stores';
     import Dial from '../Dial.svelte';
+    import ColorMenu from '../menus/ColorMenu.svelte';
 
     function handleMute() {
         toggleMute(track.id)  //The actual toggleMute function is in stores.js
@@ -17,7 +18,10 @@
     </div>
     <img src={track.instrumentIcon} alt='instrumentIcon' class="pb-2 pt-1 pl-1">
     <div class="flex flex-col pt-1">
-        <div>{track.instrument}</div>
+        <div class="flex items-center">
+            <ColorMenu trackId={track.id}/>
+            <div>{track.instrument}</div>
+        </div>
         <div class="flex flex-row mt-1 space-x-1">
             <button on:click={handleMute} class="hover:cursor-pointer w-5 h-5">
                 <!-- Changes muted icon image depending on whether muted or not -->

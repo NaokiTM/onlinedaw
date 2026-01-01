@@ -50,7 +50,7 @@
       <div class="border-neutral-800 border-1 w-1/4 h-6 p-0 flex-shrink-0" on:click={() => handleNote(index, j)} >
         <!-- For each  -->
         {#each ($TracksArray[trackIndex].regions ?? []).filter(region => region.barNo === j) as region}
-          <AudioRegion {region} />
+          <NoteRegion/>
         {/each}
       </div>
     {/each}

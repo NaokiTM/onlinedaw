@@ -89,7 +89,7 @@ function toggleMidiEditor() {
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div class="border-neutral-800 border-1 w-1/4 h-15 p-0 flex-shrink-0" on:contextmenu={(e) => handleRightClick(e, trackIndex, barIndex)}>
       {#each track.regions.filter(region => region.barNo === barIndex) as region} 
-        <AudioRegion {region} />
+          <AudioRegion {region} {track} />
       {/each}
     </div>
   {/each}
